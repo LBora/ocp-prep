@@ -1,14 +1,33 @@
 package org.ggkush.main;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Date;
+
+import java.util.Random;
+import org.ggkush.util.*;//* Character gather all contents of package.
+
+//package-> import -> class    right syntax order. not works for other conditions
+
 public class Main {
 
 	public static void main(String[] args) {
 		Main deneme = new Main();
-		deneme.setBearName("yogi");
-		System.out.println(args[1]);
+		System.out.println(deneme.setBearName("yogi"));
+		//System.out.println(args[2]);
 		//setBearName("yogi"); if we use static after public on methods
+		Random randomGenerator = new Random();
+		int number1 = randomGenerator.nextInt(10);
+		int number2 = randomGenerator.nextInt(10);
+		//Util util = new Util(); not necessary if we defined methods as a static
+		System.out.println(Util.sum(number1, number2));
+		Date date2;
+		java.sql.Date date;
+		
 	}
-
+	public void read(Files files) {
+		Paths.get("name");
+	}
 	/*
 	 * ______________________________________________________________
 		|           │ Class │ Package │ Subclass │ Subclass │ World  |
@@ -30,7 +49,14 @@ public class Main {
 		bear.setName(name, "deneme");
 		System.out.println(bear.name);
 		System.out.println(bear.getName());
-		return "";
+		
+		Animal1 bearInner = new Animal1();	
+		bearInner.setName(name);
+		bearInner.setName(name, "deneme2");
+		System.out.println(bearInner.name);
+		System.out.println(bearInner.getName());
+		
+		return bear.getName();
 	}
 }
 
